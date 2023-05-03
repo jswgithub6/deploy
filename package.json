@@ -1,0 +1,33 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jswgithub6/deploy.git"
+  },
+  "keywords": [
+    "deploy",
+    "ssh",
+    "node"
+  ],
+  "author": "wjs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jswgithub6/deploy/issues"
+  },
+  "homepage": "https://github.com/jswgithub6/deploy#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-ssh": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
+}
