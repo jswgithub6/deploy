@@ -2,13 +2,13 @@ import dotenv from "dotenv"
 import ora from "ora"
 import chalk from "chalk"
 import tar from "tar"
-import { NodeSSH, Config } from "node-ssh"
+import { NodeSSH } from "node-ssh"
 import { join } from "path/posix"
 import { readdirSync } from "fs"
 
-dotenv.config()
+dotenv.config({ path: './.env.deploy' })
 
-const config: Config = {
+const config = {
   host: process.env.SSH_HOST,
   username: process.env.SSH_USER,
   port: Number(process.env.SSH_PORT),
@@ -17,7 +17,7 @@ const config: Config = {
 
 const ssh = new NodeSSH()
 
-async function deploy() {
+export async function deploy() {
   try {
     const dist = process.env.DIST as string
     const files = readdirSync(dist)
@@ -60,5 +60,3 @@ async function deploy() {
     ssh.dispose()
   }
 }
-
-deploy()
