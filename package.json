@@ -1,8 +1,11 @@
 {
   "name": "deploy",
   "version": "1.0.1",
-  "description": "",
+  "description": "deploy-cli is a command-line tool that allows you to deploy your frontend build files to a server.",
   "main": "index.ts",
+  "bin": {
+    "deploy-cli": "./bin/deploy-cli.js"
+  },
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
     "start": "ts-node index.ts",
@@ -26,6 +29,7 @@
   "dependencies": {
     "@types/tar": "^6.1.4",
     "chalk": "^4.1.0",
+    "commander": "^10.0.1",
     "dotenv": "^16.0.3",
     "node-ssh": "^13.1.0",
     "ora": "^5.1.0",
@@ -34,6 +38,7 @@
   "devDependencies": {
     "@types/node": "^18.16.3",
     "@types/ssh2": "^1.11.11",
+    "@types/ssh2-streams": "^0.1.9",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1"
   }
